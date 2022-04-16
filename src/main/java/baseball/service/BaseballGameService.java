@@ -25,4 +25,55 @@ public class BaseballGameService {
             this.computerBaseballMap.put(this.computer.getBaseballNumber()[i], i);
         }
     }
+
+    public void play() {
+        while (this.baseball.getStrikeCount() != Baseball.BASEBALL_DIGITS) {
+            this.baseball = new Baseball();
+
+            PrintGameMessage.printInputMessage();
+            inputUserBaseball();
+            printGameResult();
+        }
+    }
+
+    public void inputUserBaseball() {
+        String userInput = Console.readLine();
+        Baseball.validateInput(userInput);
+
+        int userBaseball[] = new int[userInput.length()];
+        for (int i = 0; i < userInput.length(); i++) {
+            userBaseball[i] = userInput.charAt(i) - '0';
+        }
+        System.out.println(Arrays.toString(userBaseball));
+        user.setBaseballNumbers(userBaseball);
+    }
+
+    public void checkBallCount() {
+        for (int i = 0; i < this.user.getBaseballNumbers().length; i++) {
+            int computerIndex = computerBaseballMap.getOrDefault(this.user.getBaseballNumbers()[i], -1);
+            if (computerIndex < 0 || computerIndex == i) {
+                continue;
+            }
+
+            this.baseball.increaseBallCount();
+        }
+    }
+
+    public void checkStrikeCount() {
+        for (int i = 0; i < this.user.getBaseballNumbers().length; i++) {
+            int computerIndex = computerBaseballMap.getOrDefault(this.user.getBaseballNumbers()[i], -1);
+            if (computerIndex < 0 || computerIndex != i) {
+                continue;
+            }
+
+            this.baseball.increaseStrikeCount();
+        }
+    }
+
+    public void printGameResult() {
+        checkBallCount();
+        checkStrikeCount();
+
+        PrintGameMessage.printHint(this.baseball.getBallCount(), this.baseball.getStrikeCount());
+    }
 }

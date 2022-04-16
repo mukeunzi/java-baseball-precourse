@@ -9,6 +9,29 @@ public class Baseball {
     public static final int BASEBALL_DIGITS = 3;
     public static final int MIN_NUMBER = 1;
     public static final int MAX_NUMBER = 9;
+    private int ballCount;
+    private int strikeCount;
+
+    public Baseball() {
+        this.ballCount = 0;
+        this.strikeCount = 0;
+    }
+
+    public int getBallCount() {
+        return ballCount;
+    }
+
+    public int getStrikeCount() {
+        return strikeCount;
+    }
+
+    public void increaseBallCount() {
+        this.ballCount++;
+    }
+œ
+    public void increaseStrikeCount() {
+        this.strikeCount++;
+    }
 
     public static void validateInput(String inputBaseball) {
         validateDigits(inputBaseball);
