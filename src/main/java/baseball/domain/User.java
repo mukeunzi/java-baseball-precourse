@@ -1,17 +1,17 @@
 package baseball.domain;
 
 public class User {
-    private int[] baseballNumber;
+    private int[] baseballNumbers;
 
-    public User(int[] baseballNumber) {
-        this.baseballNumber = baseballNumber;
+    public User() {
+        this.baseballNumbers = new int[Baseball.BASEBALL_DIGITS];
     }
 
     public int[] getBaseballNumber() {
-        return baseballNumber;
+        return baseballNumbers;
     }
 
-    public void setBaseballNumber(int[] baseballNumber) {
-        this.baseballNumber = baseballNumber;
+    public void setBaseballNumber(int[] baseballNumbers) {
+        this.baseballNumbers = baseballNumbers;
     }
 }
