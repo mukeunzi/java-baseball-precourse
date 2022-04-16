@@ -7,11 +7,11 @@ public class User {
         this.baseballNumbers = new int[Baseball.BASEBALL_DIGITS];
     }
 
-    public int[] getBaseballNumber() {
+    public int[] getBaseballNumbers() {
         return baseballNumbers;
     }
 
-    public void setBaseballNumber(int[] baseballNumbers) {
+    public void setBaseballNumbers(int[] baseballNumbers) {
         this.baseballNumbers = baseballNumbers;
     }
 }
