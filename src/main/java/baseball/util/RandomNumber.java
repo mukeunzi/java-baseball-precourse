@@ -1,5 +1,6 @@
 package baseball.util;
 
+import baseball.domain.Baseball;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.HashSet;
@@ -27,7 +28,7 @@ public class RandomNumber {
     }
 
     public int getRandomNumber() {
-        int randomNumber = Randoms.pickNumberInRange(1, 9);
+        int randomNumber = Randoms.pickNumberInRange(Baseball.MIN_NUMBER, Baseball.MAX_NUMBER);
         return randomNumber;
     }
 }
