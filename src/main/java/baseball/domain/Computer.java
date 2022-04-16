@@ -1,17 +1,20 @@
 package baseball.domain;
 
-public class Computer {
-    private int[] baseballNumber;
+import baseball.util.RandomNumber;
 
-    public Computer(int[] baseballNumber) {
-        this.baseballNumber = baseballNumber;
+public class Computer {
+    private int[] baseballNumbers;
+
+    public Computer() {
+        RandomNumber randomNumber = new RandomNumber(Baseball.BASEBALL_DIGITS);
+        this.baseballNumbers = randomNumber.generateRandomNumbers();
     }
 
     public int[] getBaseballNumber() {
-        return baseballNumber;
+        return baseballNumbers;
     }
 
-    public void setBaseballNumber(int[] baseballNumber) {
-        this.baseballNumber = baseballNumber;
+    public void setBaseballNumber(int[] baseballNumbers) {
+        this.baseballNumbers = baseballNumbers;
     }
 }
