@@ -1,6 +1,14 @@
-# 숫자 야구 게임 
+# 숫자 야구 게임 ⚾️
 
-## 구현 기능 체크리스트 ⚾️
+## 코드 구현 전 프로젝트 설정 & 설계 체크리스트
+
+- [ ] IntelliJ(IDE), JAVA 8 설치하기
+- [ ] 안내받은 [커밋 메시지 컨벤션](https://gist.github.com/stephenparish/9941e89d80e2bc58a153) 읽고 정리하기
+- [ ] 안내받은 [자바 코드 컨벤션](https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java) 읽고 정리하기
+  - [ ] IntelliJ(IDE)에 컨벤션 적용하기
+- [ ] MVC 구조로 클래스 설계하기
+
+## 구현 기능 체크리스트 
 
 - [ ] 컴퓨터는 3개의 숫자를 입력할 수 있다. 
 - [ ] 플레이어는 3개의 숫자를 입력할 수 있다.
