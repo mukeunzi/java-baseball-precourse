@@ -9,11 +9,6 @@ public class Baseball {
     public static final int BASEBALL_DIGITS = 3;
     public static final int MIN_NUMBER = 1;
     public static final int MAX_NUMBER = 9;
-    private int baseballNumbers[];
-
-    public Baseball() {
-        this.baseballNumbers = new int[BASEBALL_DIGITS];
-    }
 
     public void validateInput(String inputBaseball) {
         validateDigits(inputBaseball);
@@ -28,7 +23,7 @@ public class Baseball {
     }
 
     public void validateType(String inputBaseball) {
-        final String NUMBER_VALID_REGEX = "[1-9]";
+        final String NUMBER_VALID_REGEX = "^[1-9]+$";
 
         if (!inputBaseball.matches(NUMBER_VALID_REGEX)) {
             throw new InvalidParameterError(ErrorMessage.TYPE_ERROR);
