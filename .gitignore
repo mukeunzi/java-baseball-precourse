@@ -21,6 +21,10 @@ build/
 *.ipr
 out/
 
+### Java ###
+# Compiled class file
+*.class
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -33,3 +37,4 @@ out/
 
 ### MAC ###
 .DS_Store
+
