@@ -6,7 +6,7 @@
 - [X] 안내받은 [커밋 메시지 컨벤션](https://gist.github.com/stephenparish/9941e89d80e2bc58a153) 읽고 정리하기
 - [X] 안내받은 [자바 코드 컨벤션](https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java) 읽고 정리하기
     - [X] IntelliJ(IDE)에 컨벤션 적용하기
-- [ ] MVC 구조로 클래스 설계하기
+- [X] MVC 구조로 클래스 설계하기
 
 ## 구현 기능 체크리스트
 
