@@ -27,7 +27,7 @@ public class RandomNumber {
         return this.numbers;
     }
 
-    public int getRandomNumber() {
+    private int getRandomNumber() {
         int randomNumber = Randoms.pickNumberInRange(Baseball.MIN_NUMBER, Baseball.MAX_NUMBER);
         return randomNumber;
     }
