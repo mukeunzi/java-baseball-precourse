@@ -47,31 +47,24 @@ public class BaseballGameService {
         user.setBaseballNumbers(userBaseball);
     }
 
-    public void checkBallCount() {
-        for (int i = 0; i < this.user.getBaseballNumbers().length; i++) {
-            int computerIndex = computerBaseballMap.getOrDefault(this.user.getBaseballNumbers()[i], -1);
-            if (computerIndex < 0 || computerIndex == i) {
-                continue;
-            }
-
+    public void checkBallAndStrikeCount(int computerBallIndex, int userBallIndex) {
+        if (computerBallIndex == userBallIndex) {
+            this.baseball.increaseStrikeCount();
+        }
+        if (computerBallIndex >= 0 && computerBallIndex != userBallIndex) {
             this.baseball.increaseBallCount();
         }
     }
 
-    public void checkStrikeCount() {
+    public void analyzeResult() {
         for (int i = 0; i < this.user.getBaseballNumbers().length; i++) {
-            int computerIndex = computerBaseballMap.getOrDefault(this.user.getBaseballNumbers()[i], -1);
-            if (computerIndex < 0 || computerIndex != i) {
-                continue;
-            }
-
-            this.baseball.increaseStrikeCount();
+            int computerBallIndex = computerBaseballMap.getOrDefault(this.user.getBaseballNumbers()[i], -1);
+            checkBallAndStrikeCount(computerBallIndex, i);
         }
     }
 
     public void printGameResult() {
-        checkBallCount();
-        checkStrikeCount();
+        analyzeResult();
 
         String resultMessage = analyzeResultMessage(this.baseball.getBallCount(), this.baseball.getStrikeCount());
         PrintGameMessage.printHint(resultMessage);
