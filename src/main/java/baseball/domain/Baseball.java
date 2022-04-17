@@ -28,7 +28,7 @@ public class Baseball {
     public void increaseBallCount() {
         this.ballCount++;
     }
-œ
+
     public void increaseStrikeCount() {
         this.strikeCount++;
     }

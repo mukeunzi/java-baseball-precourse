@@ -6,7 +6,6 @@ import baseball.domain.User;
 import baseball.view.PrintGameMessage;
 import camp.nextstep.edu.missionutils.Console;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class BaseballGameService {
@@ -44,7 +43,6 @@ public class BaseballGameService {
         for (int i = 0; i < userInput.length(); i++) {
             userBaseball[i] = userInput.charAt(i) - '0';
         }
-        System.out.println(Arrays.toString(userBaseball));
         user.setBaseballNumbers(userBaseball);
     }
 
