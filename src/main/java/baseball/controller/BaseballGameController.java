@@ -1,6 +1,5 @@
 package baseball.controller;
 
-import baseball.domain.GameState;
 import baseball.exception.InvalidParameterError;
 import baseball.message.ErrorMessage;
 import baseball.service.BaseballGameService;
@@ -8,7 +7,9 @@ import baseball.view.PrintGameMessage;
 import camp.nextstep.edu.missionutils.Console;
 
 public class BaseballGameController {
-    private GameState gameState;
+    private int gameState;
+    private static final int START = 1;
+    private static final int STOP = 2;
     private BaseballGameService baseballGameService;
 
     public void run() {
@@ -18,7 +19,7 @@ public class BaseballGameController {
     }
 
     public void initializeGame() {
-        this.gameState = GameState.START;
+        this.gameState = BaseballGameController.START;
     }
 
     public void startGame() {
@@ -29,17 +30,17 @@ public class BaseballGameController {
     public void retry() {
         PrintGameMessage.printRetry();
         int retryAnswer = inputUserAnswer();
-        if (retryAnswer == 1) {
+        if (retryAnswer == BaseballGameController.START) {
             run();
         }
-        if (retryAnswer == 2) {
+        if (retryAnswer == BaseballGameController.STOP) {
             PrintGameMessage.printEndMessage();
         }
     }
 
     public int inputUserAnswer() {
         int userInput = Integer.parseInt(Console.readLine());
-        if (userInput <= 0 || userInput >= 3) {
+        if (userInput < BaseballGameController.START || userInput > BaseballGameController.STOP) {
             throw new InvalidParameterError(ErrorMessage.RETRY_ERROR);
         }
 
