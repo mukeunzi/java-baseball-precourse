@@ -3,6 +3,7 @@ package baseball.service;
 import baseball.domain.Baseball;
 import baseball.domain.Computer;
 import baseball.domain.User;
+import baseball.message.GameMessage;
 import baseball.view.PrintGameMessage;
 import camp.nextstep.edu.missionutils.Console;
 
@@ -72,6 +73,18 @@ public class BaseballGameService {
         checkBallCount();
         checkStrikeCount();
 
-        PrintGameMessage.printHint(this.baseball.getBallCount(), this.baseball.getStrikeCount());
+        String resultMessage = analyzeResultMessage(this.baseball.getBallCount(), this.baseball.getStrikeCount());
+        PrintGameMessage.printHint(resultMessage);
+    }
+
+    public String analyzeResultMessage(int ballCount, int strikeCount) {
+        String hint = "";
+        if (ballCount > 0) {
+            hint += ballCount + GameMessage.BALL_MESSAGE + " ";
+        }
+        if (strikeCount > 0) {
+            hint += strikeCount + GameMessage.STRIKE_MESSAGE;
+        }
+        return hint.length() > 0 ? hint.trim() : GameMessage.NOTHING_MESSAGE;
     }
 }

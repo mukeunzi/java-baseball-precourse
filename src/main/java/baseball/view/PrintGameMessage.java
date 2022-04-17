@@ -7,15 +7,8 @@ public class PrintGameMessage {
         System.out.print(GameMessage.INPUT_MESSAGE);
     }
 
-    public static void printHint(int ballCount, int strikeCount) {
-        String hint = "";
-        if (ballCount > 0) {
-            hint += ballCount + GameMessage.BALL_MESSAGE + " ";
-        }
-        if (strikeCount > 0) {
-            hint += strikeCount + GameMessage.STRIKE_MESSAGE;
-        }
-        System.out.println(hint.length() > 0 ? hint.trim() : GameMessage.NOTHING_MESSAGE);
+    public static void printHint(String hint) {
+        System.out.println(hint);
     }
 
     public static void printRetry() {
