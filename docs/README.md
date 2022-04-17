@@ -43,25 +43,25 @@
 
 ## 프로그래밍 요구사항 및 제약사항 체크리스트
 
-- [ ] `baseball.Application`의 main()이 시작점이다.
-- [ ] **JDK 8 버전에서 실행 가능**해야 한다. (지키지 않을 경우 0점 처리)
-- [ ] JDK에서 제공하는 Random과 Scanner API 대신 `camp.nextstep.edu.missionutils` 에서 제공하는 API를 통해 구현해야 한다.
-- [ ] **`baseball.ApplicationTest`에 있는 2개의 Test Case가 성공**해야 한다. (지키지 않을 경우 0점 처리)
+- [X] `baseball.Application`의 main()이 시작점이다.
+- [X] **JDK 8 버전에서 실행 가능**해야 한다. (지키지 않을 경우 0점 처리)
+- [X] JDK에서 제공하는 Random과 Scanner API 대신 `camp.nextstep.edu.missionutils` 에서 제공하는 API를 통해 구현해야 한다.
+- [X] **`baseball.ApplicationTest`에 있는 2개의 Test Case가 성공**해야 한다. (지키지 않을 경우 0점 처리)
 
 
 - [ ] 자바 코드 컨벤션을 지키며 프로그래밍한다.
 - [ ] indent depth를 1까지만 허용한다.
-- [ ] 람다는 사용 가능하지만, stream api는 사용하지 않아야 한다.
+- [X] 람다는 사용 가능하지만, stream api는 사용하지 않아야 한다.
 - [ ] else 를 쓰지 않는다. (빠른 리턴 권장)
 - [ ] 함수의 길이가 10줄을 넘지 않는다.
 
-- [ ] 도메인 단위로 테스트를 구현한다. (단, UI 로직 제외)
-- [ ] 핵심 로직을 구현하는 코드와 UI를 담당하는 로직을 분리해 구현한다.
-- [ ] MVC 패턴으로 구현한 후, Model에 대한 단위 테스트를 추가하는 것에 집중한다.
-- [ ] 참고자료를 통해 JUnit5, AssertJ 사용법을 익힌 후, JUnit5 기반 테스트를 구현한다.
+- [X] 도메인 단위로 테스트를 구현한다. (단, UI 로직 제외)
+- [X] 핵심 로직을 구현하는 코드와 UI를 담당하는 로직을 분리해 구현한다.
+- [X] MVC 패턴으로 구현한 후, Model에 대한 단위 테스트를 추가하는 것에 집중한다.
+- [X] 참고자료를 통해 JUnit5, AssertJ 사용법을 익힌 후, JUnit5 기반 테스트를 구현한다.
 
 ## 과제 제출 전 체크리스트 (0점 방지)
 
-- [ ] 터미널에서 `java -version`을 실행하여 **자바 8인지 확인**한다.
-- [ ] 맥 사용자의 경우 `./gradlew clean test`를 실행히여 **모든 테스트가 통과하는지 확인**한다.
+- [X] 터미널에서 `java -version`을 실행하여 **자바 8인지 확인**한다.
+- [X] 맥 사용자의 경우 `./gradlew clean test`를 실행히여 **모든 테스트가 통과하는지 확인**한다.
 - [ ] PR 요청 및 구글 폼을 **4/18(월)까지 제출**한다.
