@@ -3,6 +3,7 @@ package baseball.domain;
 import baseball.exception.InvalidParameterError;
 import baseball.message.ErrorMessage;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class Baseball {
@@ -55,9 +56,7 @@ public class Baseball {
 
     public static void validateUnique(String inputBaseball) {
         HashSet<String> baseballSet = new HashSet<>();
-        for (String input : inputBaseball.split("")) {
-            baseballSet.add(input);
-        }
+        baseballSet.addAll(Arrays.asList(inputBaseball.split("")));
 
         if (baseballSet.size() != BASEBALL_DIGITS) {
             throw new InvalidParameterError(ErrorMessage.DUPLICATE_ERROR);
