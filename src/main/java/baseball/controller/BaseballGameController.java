@@ -1,42 +1,48 @@
 package baseball.controller;
 
-import baseball.domain.Baseball;
-import baseball.domain.Computer;
-import baseball.domain.User;
+import baseball.domain.GameState;
+import baseball.exception.InvalidParameterError;
+import baseball.message.ErrorMessage;
 import baseball.service.BaseballGameService;
 import baseball.view.PrintGameMessage;
 import camp.nextstep.edu.missionutils.Console;
 
 public class BaseballGameController {
+    private GameState gameState;
     private BaseballGameService baseballGameService;
-    private Computer computer;
-    private User user;
-    private Baseball baseball;
 
     public void run() {
+        initializeGame();
+        startGame();
+        retry();
+    }
+
+    public void initializeGame() {
+        this.gameState = GameState.START;
+    }
+
+    public void startGame() {
         baseballGameService = new BaseballGameService();
-        computer = new Computer();
-        user = new User();
-        baseball = new Baseball();
-
-        start();
+        baseballGameService.play();
     }
 
-    public void start() {
-        PrintGameMessage.printInputMessage();
-        int userInput[] = getUserInput();
-
-        user.setBaseballNumber(userInput);
-    }
-
-    public int[] getUserInput() {
-        String userInput = Console.readLine();
-        baseball.validateInput(userInput);
-
-        int userBaseball[] = new int[userInput.length()];
-        for (int i = 0; i < userInput.length(); i++) {
-            userBaseball[i] = userInput.charAt(i) - '0';
+    public void retry() {
+        PrintGameMessage.printRetry();
+        int retryAnswer = inputUserAnswer();
+        if (retryAnswer == 1) {
+            run();
         }
-        return userBaseball;
+        if (retryAnswer == 2) {
+            PrintGameMessage.printEndMessage();
+        }
+    }
+
+    public int inputUserAnswer() {
+        int userInput = Integer.parseInt(Console.readLine());
+        if (userInput <= 0 || userInput >= 3) {
+            throw new InvalidParameterError(ErrorMessage.RETRY_ERROR);
+        }
+
+        return userInput;
     }
 }
